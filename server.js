@@ -25,11 +25,16 @@ mongoose.connection.once('open', () => {
 })
 
 // Controller
-const fruitsController = require('./controllers/fruits.js');
-app.use('/fruits', fruitsController);
+const inventoryController = require('./controllers/inventory.js');
+app.use('/inventory', inventoryController);
 
-const veggiesController = require('./controllers/veggies.js');
-app.use('/veggies', veggiesController);
+const menuController = require('./controllers/menu.js');
+app.use('/menu', menuController);
+
+const recipesController = require('./controllers/recipes.js');
+app.use('/recipes', recipesController);
+
+
 
 // listen
 app.listen(PORT, () => {
