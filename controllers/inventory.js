@@ -6,7 +6,7 @@ const Inventory = require('../models/inventory.js');
 // Index
 router.get('/', (req, res) => {
     // Use inventory model to get all inventory
-    Fruit.find({}, (error, allInventory) => {
+    Inventory.find({}, (error, allInventory) => {
         ///FILE PATH
         res.render('inventory/Index', {
             inventory: allInventory

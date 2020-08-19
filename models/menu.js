@@ -14,7 +14,7 @@ const menuSchema = new Schema({
 }, { timestamps: true });
 
 //  Create Model from our Schema
-const Menu= mongoose.model('Inventory', menuSchema);
+const Menu= mongoose.model('Menu', menuSchema);
 
 // Export Fruit Model
 module.exports = Menu;

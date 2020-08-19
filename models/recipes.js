@@ -18,7 +18,7 @@ const recipesSchema = new Schema({
 }, { timestamps: true });
 
 //  Create Model from our Schema
-const Recipes= mongoose.model('Inventory', recipeSchema);
+const Recipes= mongoose.model('Recipes', recipesSchema);
 
 // Export Fruit Model
 module.exports = Recipes;
