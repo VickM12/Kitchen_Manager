@@ -58,7 +58,7 @@ router.get('/:id/edit', (req, res) => {
     Menu.findById(req.params.id, (err, foundMenu) => {
         // render the edit view and pass it the found menu
         res.render('menu/Edit', {
-            inventroy: foundMenu
+            menu: foundMenu
         })
     });
 });
