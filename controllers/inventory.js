@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Index = require('../models/inventory.js');
+const Inventory = require('../models/inventory.js');
 
 // add routes
 // Index
