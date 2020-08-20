@@ -39,7 +39,7 @@ router.put('/:id', (req, res) => {
 });
 
 // Create
-router.post('/', (req, res) => {
+router.post('/inventory', (req, res) => {
     if (req.body.favorite === "on") {
         req.body.favorite = true;
     } else {

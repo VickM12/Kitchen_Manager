@@ -23,7 +23,7 @@ router.get('/new', (req, res) => {
 // Delete
 router.delete('/:id', (req, res) => {
     // Delete document from collection
-    menu.findByIdAndRemove(req.params.id, (err, menu) => {
+    Menu.findByIdAndRemove(req.params.id, (err, menu) => {
         res.redirect('/menu');
     });
 });
@@ -33,7 +33,7 @@ router.put('/:id', (req, res) => {
     req.body.isGlutenFree = req.body.favorite === "on" ? true : false;
     
     // Update the menu document using our model
-    menu.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel) => {
+    Menu.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel) => {
         res.redirect('/menu');
     });
 });
