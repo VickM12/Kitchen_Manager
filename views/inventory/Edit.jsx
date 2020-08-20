@@ -1,7 +1,7 @@
 const React = require('react');
 class Edit extends React.Component{
     render(){
-        const {_id, name, packType, packSize, packUnit, packPrice, amntOnHand, totalCost} = this.props.fruit;
+        const { name, packType, packSize, packUnit, packPrice, amntOnHand, totalCost} = this.props.inventory;
         return (
             <div>
                 <h1>New Inventroy</h1>

@@ -38,20 +38,21 @@ router.put('/:id', (req, res) => {
     });
 });
 
-// Create
-router.post('/inventory', (req, res) => {
-    if (req.body.favorite === "on") {
+// // Create
+
+router.post('/', (req, res)=> {
+    if (req.body.favorite === "on"){
         req.body.favorite = true;
-    } else {
+    }else{
         req.body.favorite = false;
     }
-    // Use Model to create inventory Document
-    Inventory.create(req.body, (error, createdInventory) => {
-        // Once created - respond to client
+    
+    Inventory.create(req.body, (error, createdInventory)=>{
         res.redirect('/inventory');
+        console.log(error)
+        console.log(createdInventory)
     });
 });
-
 // Edit 
 router.get('/:id/edit', (req, res) => {
     // Find our document from the collection - using mongoose model

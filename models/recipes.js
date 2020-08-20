@@ -10,8 +10,8 @@ const recipesSchema = new Schema({
     {unit:{type: String, require: true}},
     {yield:{type: Number, required: true}},
     {purchasePrice:{type: Number, required: true}},
-    {foodCost:{type: Number, required: true}}
-    ],
+    {foodCost:{type: Number, required: true}
+    }],
     totalCost:  {type: Number, required: true},
     menuPrice: {type:Number, required: true},
     isGlutenFree: {type: Boolean, required: false, default:false}

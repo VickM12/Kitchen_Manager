@@ -6,11 +6,11 @@ const inventorySchema = new Schema({
     name: { type: String, required: true },
     packType: { type: String, required: true },
     packSize:  {type: Number, required: true},
-    packUnit: {type: Number, required: true},
+    packUnit: {type: String, required: true},
     packPrice:  {type: Number, required: true},
     amntOnHand: {type: Number, required: true},
     totalCost:  {type: Number, required: true},
-    favorite: {type: Boolean, required: false, default:false}
+    favorite:  {type: Boolean, required: false}
 }, { timestamps: true });
 
 //  Create Model from our Schema
