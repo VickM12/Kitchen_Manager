@@ -7,9 +7,8 @@ const menuSchema = new Schema({
     season: {type: String, required: true},
     section: {type: String, required: true},
     foodCost:{type: Number, required: true},
-    totalCost:  {type: Number, required: true},
     menuPrice: {type:Number, required: true},
-    station: {type: Number, required: false},
+    station: {type: String, required: false},
     isGlutenFree: {type: Boolean, required: false, default:false}
 }, { timestamps: true });
 

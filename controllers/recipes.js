@@ -48,6 +48,8 @@ router.post('/', (req, res) => {
     // Use Model to create recipes Document
     Recipes.create(req.body, (error, createdRecipes) => {
         // Once created - respond to client
+        console.log(error)
+        console.log(createdRecipes)
         res.redirect('/recipes');
     });
 });

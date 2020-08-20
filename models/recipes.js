@@ -12,6 +12,7 @@ const recipesSchema = new Schema({
     {purchasePrice:{type: Number, required: true}},
     {foodCost:{type: Number, required: true}
     }],
+    methodOfPrep: {type: String, required: true},
     totalCost:  {type: Number, required: true},
     menuPrice: {type:Number, required: true},
     isGlutenFree: {type: Boolean, required: false, default:false}

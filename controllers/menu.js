@@ -49,6 +49,8 @@ router.post('/', (req, res) => {
     Menu.create(req.body, (error, createdMenu) => {
         // Once created - respond to client
         res.redirect('/menu');
+        console.log(error)
+        console.log(createdMenu)
     });
 });
 

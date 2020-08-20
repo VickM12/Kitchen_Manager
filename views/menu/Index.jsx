@@ -2,7 +2,7 @@ const React = require('react');
 
 class Index extends React.Component {
     render () {
-        const {inventory}= this.props;
+        const {menu}= this.props;
         return(
             <div>
                 <nav>
@@ -11,6 +11,23 @@ class Index extends React.Component {
                     <a href='/recipes'>Recipe Manager</a>
                 </nav>
             <h1>Menu Manager</h1>
+            <ul>
+            {menu.map((menu, i)=>{
+                return (
+                    <li>
+                        <a href={`/menu/${menu._id}`}><h2>{menu.dishName}</h2></a>
+                        Menu price: ${menu.menuPrice}
+                        Season: {menu.season}
+                        <a href={`/menu/${menu._id}/edit`}>Edit Inventory</a>
+                        <form action={`/menu/${menu._id}?_method=DELETE`} method="POST">
+                                        <input type="submit" value="delete"/>
+                        </form>
+
+                    </li>
+                )
+            }
+            )}
+            </ul>
             </div>
         )
     }
