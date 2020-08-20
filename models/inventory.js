@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 const inventorySchema = new Schema({
     name: { type: String, required: true },
     packType: { type: String, required: true },
-    packWeight:  {type: Number, required: true},
+    packSize:  {type: Number, required: true},
+    packUnit: {type: Number, required: true},
     packPrice:  {type: Number, required: true},
     amntOnHand: {type: Number, required: true},
     totalCost:  {type: Number, required: true},

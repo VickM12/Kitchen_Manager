@@ -11,6 +11,18 @@ class Index extends React.Component {
                     <a href='/recipes'>Recipe Manager</a>
                 </nav>
             <h1>Inventory Manager</h1>
+            
+            <ul>
+            {inventory.map((inventory, i)=>{
+                return (
+                    <li>
+                        <a href={`/inventory/${inventory._id}`}><h2>{inventory.name}</h2></a>
+                    </li>
+                )
+            }
+        }
+            </ul>
+            
             </div>
         )
     }
