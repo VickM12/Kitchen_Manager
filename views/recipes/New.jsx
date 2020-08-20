@@ -3,7 +3,8 @@ const React= require('react');
 class New extends React.Component{
     render () {
         const ingredientPush = ()=>{
-            recipe.ingredient.push(name, amount, unit, yieldPercent, purchasePrice)
+            createdRecipe.ingredient.push(name, amount, unit, yieldPercent, purchasePrice)
+            console.log('Ive been called')
         }
         return (
             <div>
@@ -11,7 +12,7 @@ class New extends React.Component{
 <a href="/recipes">Return</a>
 <div>
 <form action="/recipes" method="POST"
-onSubmit="ingredientPush()">
+>
     Dish Name: <input type="text" name="dishName"/><br/>
     Ingredients:<br/>
     Name: <input type="text" name="name"/><br/>
@@ -24,7 +25,7 @@ onSubmit="ingredientPush()">
     Total Cost: $<input type="number" name="totalCost" step="any"/><br/>
     Menu Price: $<input type="number" name="menuPrice" step="any"/><br/>
     Gluten Free<input type="checkbox" name="isGlutenFree"/><br/>
-    <input id="recipeSubmit" type="submit" name="" value="Submit New Recipe"/><br/>
+    <input id="recipeSubmit" type="submit" name="" value="Submit New Recipe" /><br/>
     
     
 </form>
