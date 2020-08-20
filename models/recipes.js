@@ -8,7 +8,7 @@ const recipesSchema = new Schema({
     {name: {type: String, required: true}},
     {amount:{ type: Number, required: true}},
     {unit:{type: String, require: true}},
-    {yield:{type: Number, required: true}},
+    {yieldPercent:{type: Number, required: true}},
     {purchasePrice:{type: Number, required: true}},
     {foodCost:{type: Number, required: true}
     }],

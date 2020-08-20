@@ -72,6 +72,8 @@ router.get('/:id', (req, res) => {
     // Find the specific document
     Recipes.findById(req.params.id, (error, foundRecipe) => {
         // render the Show route and pass it the foundrecipes
+        console.log(error)
+        console.log(foundRecipe)
         res.render('recipes/Show', {
             recipe: foundRecipe
         });
