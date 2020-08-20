@@ -8,8 +8,8 @@ router.get('/', (req, res) => {
     // Use recipes model to get all recipes
     Recipes.find({}, (error, allRecipes) => {
         ///FILE PATH
-        console.log(error)
-        console.log(allRecipes)
+        // console.log(error)
+        // console.log(allRecipes)
         res.render('recipes/Index', {
             recipes: allRecipes
         })
@@ -47,7 +47,7 @@ router.post('/', (req, res) => {
     } else {
         req.body.isGlutenFree = false;
     }
-    console.log(req.body)
+    // console.log(req.body)
     const ingredient = {
         name: req.body.name,
         amount: req.body.amount,
@@ -68,8 +68,8 @@ router.post('/', (req, res) => {
     // Use Model to create recipes Document
     Recipes.create(recipe, (error, createdRecipes) => {
         // Once created - respond to client
-        console.log(error)
-        console.log(createdRecipes)
+        // console.log(error)
+        // console.log(createdRecipes)
         res.redirect('/recipes');
     });
 });
@@ -90,8 +90,8 @@ router.get('/:id', (req, res) => {
     // Find the specific document
     Recipes.findById(req.params.id, (error, foundRecipe) => {
         // render the Show route and pass it the foundrecipes
-        console.log(error)
-        console.log(foundRecipe)
+        // console.log(error)
+        // console.log(foundRecipe)
         res.render('recipes/Show', {
             recipe: foundRecipe
         });

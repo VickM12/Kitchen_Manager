@@ -15,7 +15,7 @@ class Index extends React.Component {
                 {recipes.map((recipe, i)=>{
                     return(
                     <li><a href={`recipes/${recipe._id}`}><h2>{recipe.dishName}</h2></a>
-                   
+                   <a href={`recipes/${recipe._id}/edit/`}>Edit this Recipe</a>
                     {// Delete method
                     }
                     <form action={`/recipes/${recipe._id}?_method=DELETE`} method="POST">
