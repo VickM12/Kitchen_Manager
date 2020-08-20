@@ -8,6 +8,8 @@ router.get('/', (req, res) => {
     // Use recipes model to get all recipes
     Recipes.find({}, (error, allRecipes) => {
         ///FILE PATH
+        console.log(error)
+        console.log(allRecipes)
         res.render('recipes/Index', {
             recipes: allRecipes
         })
