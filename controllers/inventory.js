@@ -45,7 +45,7 @@ router.post('/', (req, res) => {
     } else {
         req.body.favorite = false;
     }
-    // Use Model to create Fruit Document
+    // Use Model to create inventory Document
     Inventory.create(req.body, (error, createdInventory) => {
         // Once created - respond to client
         res.redirect('/inventory');

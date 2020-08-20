@@ -17,10 +17,12 @@ class Index extends React.Component {
                 return (
                     <li>
                         <a href={`/inventory/${inventory._id}`}><h2>{inventory.name}</h2></a>
+                        Purchase price: ${inventory.packPrice}
+
                     </li>
                 )
             }
-        }
+            )}
             </ul>
             
             </div>
