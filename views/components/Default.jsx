@@ -10,7 +10,7 @@ class Default extends React.Component {
                     <link rel="stylesheet" href="/css/main.css"/>
                 </head>
                 <body>
-                    {/* <script src="/components/menuItem.js"></script> */}
+                     <script src="/components/menuItem.js"></script> 
                 </body>
             </html>
         )

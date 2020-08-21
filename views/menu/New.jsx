@@ -7,7 +7,7 @@ render (){
     return (
         <Default>
         <div>
-            <div class='header'>
+            <div className='header'>
             <h1>Create New Menu</h1>
             <a href="/menu">return</a>
             </div>

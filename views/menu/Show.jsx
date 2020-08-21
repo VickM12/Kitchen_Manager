@@ -9,20 +9,23 @@ class Show extends React.Component {
             <div>
                 <a href="/menu">Return</a>
                 <h1>{menu.season}</h1>
-                <ul>                
-                    <li>
-                        Name: {menu.dishName}<br/>
-                        Section:{menu.section}<br/>
-                        Station:{menu.station}<br/>
-                        Food Cost: ${menu.foodCost}<br/>
-                        Menu Price: ${menu.menuPrice}<br/>
-                        {menu.isGlutenFree? "Gluten Free" :''}
+                <ul>{ 
+                menu.menuItem.map((menuItem, i)=>{
+                        return(               
+                    <li key={menu.menuItem[i].dishName}>
+                        Name: {menu.menuItem[i].dishName}<br/>
+                        Section:{menu.menuItem[i].section}<br/>
+                        Station:{menu.menuItem[i].station}<br/>
+                        Food Cost: ${menu.menuItem[i].foodCost}<br/>
+                        Menu Price: ${menu.menuItem[i].menuPrice}<br/>
+                        {menu.menuItem[i].isGlutenFree? "Gluten Free" :''}
                         <a href="/recipes">Recipe</a>
 
-                </li>
-                
-                
-            </ul>
+                    </li>
+                        )
+                    })
+                }
+                </ul>
             </div>
         )
     }

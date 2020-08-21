@@ -2,7 +2,7 @@ const React = require('react');
 class Show extends React.Component{
     render () {
             const {recipe}= this.props
-            let i = 
+            
             console.log(recipe.ingredient)
             return(
             

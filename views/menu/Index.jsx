@@ -16,7 +16,7 @@ class Index extends React.Component {
             <ul>
             {menu.map((menu, i)=>{
                 return (
-                    <li>
+                    <li key={menu.season}>
                         <a href={`/menu/${menu._id}`}><h2>{menu.season}</h2></a>
                         Menu price: ${menu.menuPrice}<br/> 
                         Season: {menu.season}<br/>

@@ -45,25 +45,30 @@ router.post('/', (req, res) => {
     } else {
         req.body.isGlutenFree = false;
     }
-    // const menuItems= {
-    //     dishName: req.body.dishName,
-    //     section: req.body.section,
-    //     foodCost: req.body.foodCost,
-    //     menuPrice:req.body.menuPrice,
-    //     station: req.body.station,
-    //     isGlutenFree:req.body.isGlutenFree
-    // }
-    // const menu = {
-    //     season:req.body.season,
-    //     menuItems:[]
-    // }
-    // menu.menuItems.push(menuItems)
+    const menuItem= {
+        dishName: req.body.dishName,
+        section: req.body.section,
+        foodCost: req.body.foodCost,
+        menuPrice:req.body.menuPrice,
+        station: req.body.station,
+        isGlutenFree:req.body.isGlutenFree
+    }
+    const menu = {
+        season:req.body.season,
+        menuItem:[],
+        isGlutenFree: req.body.isGlutenFree
+    }
+    menu.menuItem.push(menuItem)
+    console.log(menuItem)
+    console.log(menu)
     // Use Model to create menu Document
-    Menu.create(req.body, (error, createdMenu) => {
+    Menu.create(menu, (error, createdMenu) => {
         // Once created - respond to client
         res.redirect('/menu');
         console.log(error)
+    
         console.log(createdMenu)
+        
     });
 });
 
@@ -83,6 +88,8 @@ router.get('/:id', (req, res) => {
     // Find the specific document
     Menu.findById(req.params.id, (error, foundMenu) => {
         // render the Show route and pass it the foundmenu
+        console.log(error)
+        console.log(foundMenu)
         res.render('menu/Show', {
             menu: foundMenu
         });
