@@ -1,11 +1,16 @@
+let counter = 0
+
 const addItem =()=>{
-    let newField = document.getElementById('newItem');
-    let form= document.createElement('input');
-form.innerHTML(
-    Dish Name <input type="text" name="dishName"/><br/>
-section: <input type="text" name="section"/><br/>
-Food Cost: <input type="number" name="foodCost"/><br/>
-Menu Price: $<input type="number" name="menuPrice"/><br/>
-station: <input type="text" name="station"/><br/>
-Is Gluten Free: <input type="checkbox" name="isGlutenFree" default={false}/><br/>
-<input type="submit" name="" value="Submit Menu"/>})
+    counter++;
+    let newFields = document.getElementById('menuItem').cloneNode(true);
+    newFields.id=''
+    let newField=newFields.childNodes;
+    for (let i =0; i <newField.length;i++){
+        let theName =newField[i].name
+        if (theName)
+        newField[i].name = theName + counter;
+    }
+    let insertHere = document.getElementById("newItem");
+    insertHere.parentNode.insertAfter(newFields, insertHere);
+}
+module.exports= addItem();
