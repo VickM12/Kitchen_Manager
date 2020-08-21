@@ -1,4 +1,5 @@
-let counter = 0
+
+let counter = 0;
 
 const addItem =()=>{
     counter++;
@@ -11,6 +12,9 @@ const addItem =()=>{
         newField[i].name = theName + counter;
     }
     let insertHere = document.getElementById("newItem");
-    insertHere.parentNode.insertAfter(newFields, insertHere);
+    return(
+    insertHere.parentNode.insertAfter(newFields, insertHere)
+    );
 }
+
 module.exports= addItem();

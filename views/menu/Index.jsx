@@ -1,16 +1,18 @@
 const React = require('react');
-
+const Default = require('../components/Default.jsx')
 class Index extends React.Component {
     render () {
         const {menu}= this.props;
         return(
-            <div>
+           <Default>
+           <div className='header'>
+                <h1>Menu Manager</h1>
                 <nav>
                     <a href="/menu/new">Add New Menu</a>
                     <a href='/inventory'>Inventory Manager</a>
                     <a href='/recipes'>Recipe Manager</a>
                 </nav>
-            <h1>Menu Manager</h1>
+            </div>
             <ul>
             {menu.map((menu, i)=>{
                 return (
@@ -28,7 +30,8 @@ class Index extends React.Component {
             }
             )}
             </ul>
-            </div>
+            
+            </Default>
         )
     }
 }

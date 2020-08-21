@@ -1,5 +1,5 @@
 const React = require ('react')
-class Forms extends React.Component {
+class Default extends React.Component {
     render() {
         
         return(
@@ -7,13 +7,13 @@ class Forms extends React.Component {
             <html>
                 <head>
                     {this.props.children}
-                    <link rel="stylesheet" href="/css/form.css"/>
+                    <link rel="stylesheet" href="/css/main.css"/>
                 </head>
                 <body>
-                    <script src="/components/menuItem.js"></script>
+                    {/* <script src="/components/menuItem.js"></script> */}
                 </body>
             </html>
         )
     }
 }
-module.exports = Forms
+module.exports = Default

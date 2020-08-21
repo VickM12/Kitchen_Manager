@@ -1,5 +1,5 @@
 const React = require('react');
-const addItem = require('../components/menuItem.js')
+// const addItem= require('../components/MenuItem.jsx')
 const Default= require('../components/Forms.jsx')
 
 class New extends React.Component{
@@ -21,7 +21,7 @@ render (){
             Is Gluten Free: <input type="checkbox" name="isGlutenFree" default={false}/><br/>
             <input id="submit" type="submit" name="" value="Submit Menu"/>
             <div id="newItem"></div>
-            </form><button onclick={addItem()}id="addNewItem">Add New Item</button>
+            </form><button /*onclick={addItem()}*/id="addNewItem">Add New Item</button>
             <div class="footer"></div>
         </div>
 

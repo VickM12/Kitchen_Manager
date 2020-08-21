@@ -1,51 +1,30 @@
-*{border:solid gold 1px}
+/* *{border:solid gold 1px} */
 body{
     /* background-color: rgb(0, 162, 255); */
     background-color:lightblue;
-    text-transform: capitalize
+    text-transform: capitalize;
+    
 }
-div{
+ul{
     display:flex;
     flex-direction: column;
     align-items:center;
+    justify-content:left;
     background-color: lightblue;
+    text-decoration: none;
+    list-style-type: none;
 }
 .header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     width: 100%;
     margin: 5px;
     color:white;
+    padding: 2px;
     background:linear-gradient(rgb(0, 162, 255), lightblue);    
 }
-#form{
-margin: 2px;
-padding: 2px;
-display:flex;
-flex-direction: column;
-align-Items: center;
-background-color: lightblue;
-width: 100%;
-height: 100%;
-font-size: 20px
-}
-#newRecipeForm{
-
-display:flex;
-flex-direction: column;
-flex-wrap: wrap;
-align-Items: center;
-background-color: lightblue;
-width: 100%;
-height: 100%;
-font-size: 20px
-}
-
-#submit{
-    padding: 2px;
+.header a{
     margin: 2px;
-    font-size:18px;
-}
-button{
-    padding: 2px;
-    margin: 2px;
-    font-size:15px;
+    text-decoration:none;
 }
