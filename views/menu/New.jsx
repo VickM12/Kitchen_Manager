@@ -21,7 +21,7 @@ render (){
             Is Gluten Free: <input type="checkbox" name="isGlutenFree" default={false}/><br/>
             <input id="submit" type="submit" name="" value="Submit Menu"/>
             <div id="newItem"></div>
-            </form><button /*onclick={addItem()}*/id="addNewItem">Add New Item</button>
+            </form><button onclick={addItem()}id="addNewItem">Add New Item</button>
             <div class="footer"></div>
         </div>
 
