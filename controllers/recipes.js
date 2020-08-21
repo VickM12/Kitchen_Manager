@@ -53,7 +53,7 @@ router.post('/', (req, res) => {
         amount: req.body.amount,
         unit: req.body.unit,
         yieldPercent: req.body.yieldPercent,
-        purchacePrice: req.body.purchasePrice,
+        purchasePrice: req.body.purchasePrice,
         foodCost: req.body.foodCost
     }
     const recipe = {
@@ -68,8 +68,8 @@ router.post('/', (req, res) => {
     // Use Model to create recipes Document
     Recipes.create(recipe, (error, createdRecipes) => {
         // Once created - respond to client
-        // console.log(error)
-        // console.log(createdRecipes)
+        console.log(error)
+        console.log(createdRecipes)
         res.redirect('/recipes');
     });
 });

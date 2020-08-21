@@ -14,7 +14,7 @@ class Index extends React.Component {
             <ul>
                 {recipes.map((recipe, i)=>{
                     return(
-                    <li><a href={`recipes/${recipe._id}`}><h2>{recipe.dishName}</h2></a>
+                    <li key={recipe.dishName}><a href={`recipes/${recipe._id}`}><h2>{recipe.dishName}</h2></a>
                    <a href={`recipes/${recipe._id}/edit/`}>Edit this Recipe</a>
                     {// Delete method
                     }

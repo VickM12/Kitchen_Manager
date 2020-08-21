@@ -10,12 +10,13 @@ class New extends React.Component{
         }
         return (
        <Default>
-       <div>
-                <div class="header">
-                    <h1>New Recipe</h1>
-                    <a href="/recipes">Return</a>
-                </div>
-            <form id="form" action="/recipes" method="POST">
+        <div>
+                 <div class="header">
+                     <h1>New Recipe</h1>
+                     <a href="/recipes">Return</a>
+                 </div>
+    
+            <form id="newRecipeForm" action="/recipes" method="POST">
             Dish Name: <input type="text" name="dishName"/><br/>
             Ingredients:<br/>
             Name: <input type='text' name="name"/><br/>
@@ -31,9 +32,41 @@ class New extends React.Component{
             <input id="submit" type="submit" name="" value="Submit New Recipe" /><br/>    
             </form>
         </div>
-        </Default>
+        // </Default>
 
         )
     }
 }
 module.exports= New
+
+/////////////////////////////////////////////////////
+/////Tried to make the input a table to mimic a real
+/////Recip card but it wasn't user friendly
+////////////////////////////////////////////////////
+
+/*//             <form id="newRecipeForm" action="/recipes" method="POST">
+    //             <table>
+    //             <tr>
+    //                  <th>Ingredient</th>
+    //                  <th>Amount</th>
+    //                  <th>Unit</th> 
+    //                  <th>Yield %</th>
+    //                  <th>Purchase Price/ oz</th>
+    //                 <th>Food Cost Price</th>
+    //                 <th>Total Cost</th>
+    //                 <th>Suggested Menu Price</th>
+    //             </tr>
+                        
+    //             <tr>
+    //                 <td><input type='text' name="name"/></td>
+    //                 <td><input type="number"  name="amount"/></td>
+    //                 <td><input type="text" name="unit"/></td>
+    //                 <td><input type="number" name="yieldPercent" step="any"/>%</td>
+    //                 <td>$<input type="number" name="purchasePrice" step="any"/></td>
+    //                 <td>$ <input type="number" name="foodCost" step="any"/></td>
+    //                 <td>$<input type="number" name="totalCost" step="any"/></td>
+    //                 <td>$<input type="number" name="menuPrice" step="any"/></td>
+
+    //             </tr>               
+    //              </table>
+                 </form>*/

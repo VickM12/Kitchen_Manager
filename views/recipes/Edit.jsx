@@ -2,7 +2,7 @@ const React= require('react');
 class Edit extends React.Component{
     render () {
         const {recipe}= this.props
-        const ingredient = recipe.keys(ingredient.map(ingredient))
+        // const ingredient = recipe.keys(ingredient.map(ingredient))
         return (
             
             <div>
@@ -12,11 +12,11 @@ class Edit extends React.Component{
     Dish Name: <input type="text" name="dishName" defaultValue={recipe.dishName}/><br/>
     Ingredients:<br/>
     Name: <input type="text" name="name" defaultValue={recipe.ingredient.name}/><br/>
-    Amount: <input type="number"  name="amount" defultValue={ingredient.amount}/><br/>
-    Unit: <input type="text" name="unit" defaultValue={ingredient.unit}/><br/>
-    Yield %: <input type="number" name="yieldPercent" step="any" defaultValue={ingredient.yieldPercent}/>% <br/>
-    Purchase Price: $<input type="number" name="purchasePrice" step="any" defaultValue={ingredient.purchasePrice}/> / oz.<br/>
-    Food Cost: $ <input type="number" name="foodCost" step="any" defaultValue={ingredient.foodCost}/><br/>
+    Amount: <input type="number"  name="amount" defultValue={recipe.ingredient.amount}/><br/>
+    Unit: <input type="text" name="unit" defaultValue={recipe.ingredient.unit}/><br/>
+    Yield %: <input type="number" name="yieldPercent" step="any" defaultValue={recipe.ingredient.yieldPercent}/>% <br/>
+    Purchase Price: $<input type="number" name="purchasePrice" step="any" defaultValue={recipe.ingredient.purchasePrice}/> / oz.<br/>
+    Food Cost: $ <input type="number" name="foodCost" step="any" defaultValue={recipe.ingredient.foodCost}/><br/>
      
     Method of Prep:<input type="text area" name="methodOfPrep" defaultValue={recipe.methodOfPrep}/><br/>
     Total Cost: $<input type="number" name="totalCost" step="any" defaultValue={recipe.totalCost}/><br/>
