@@ -4,7 +4,7 @@ class New extends React.Component{
 render (){
     return (
         <div>
-            <form action='/menu' method='POST'>
+            <form id="menuItem" action='/menu' method='POST'>
             Season: <input type="text" name="season"/><br/>
             Dish Name <input type="text" name="dishName"/><br/>
             section: <input type="text" name="section"/><br/>
@@ -13,7 +13,8 @@ render (){
             station: <input type="text" name="station"/><br/>
             Is Gluten Free: <input type="checkbox" name="isGlutenFree" default={false}/><br/>
             <input type="submit" name="" value="Submit Menu"/>
-            </form>
+            <div id="newItem"></div>
+            </form><button id="addNewItem">Add New Item</button>
         </div>
         )
     }
