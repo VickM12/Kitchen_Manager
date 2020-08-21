@@ -5,8 +5,8 @@ render (){
     return (
         <div>
             <form action='/menu' method='POST'>
-            Dish Name <input type="text" name="dishName"/><br/>
             Season: <input type="text" name="season"/><br/>
+            Dish Name <input type="text" name="dishName"/><br/>
             section: <input type="text" name="section"/><br/>
             Food Cost: <input type="number" name="foodCost"/><br/>
             Menu Price: $<input type="number" name="menuPrice"/><br/>

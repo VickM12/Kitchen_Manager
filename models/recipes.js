@@ -5,13 +5,14 @@ const Schema = mongoose.Schema;
 const recipesSchema = new Schema({
     dishName: { type: String, required: true },
     ingredient:[
+        
         {name: {type: String, required: true}},
         {amount:{ type: Number, required: true}},
         {unit:{type: String, require: true}},
         {yieldPercent:{type: Number, required: true}},
         {purchasePrice:{type: Number, required: true}},
-        {foodCost:{type: Number, required: true}
-    }],
+        {foodCost:{type: Number, required: true}}
+    ],
     methodOfPrep: {type: String, required: true},
     totalCost:  {type: Number, required: true},
     menuPrice: {type:Number, required: true},

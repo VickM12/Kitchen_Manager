@@ -1,5 +1,6 @@
 const React= require('react');
 // const Recipe= require('../models/recipes.js')
+// import Inventory from '../controllers/inventory.js'
 class New extends React.Component{
     render () {
         const ingredientPush = ()=>{
@@ -15,7 +16,7 @@ class New extends React.Component{
 >
     Dish Name: <input type="text" name="dishName"/><br/>
     Ingredients:<br/>
-    Name: <input type="text" name="name"/><br/>
+    Name: <input type='text' name="name"/><br/>
     Amount: <input type="number"  name="amount"/><br/>
     Unit: <input type="text" name="unit"/><br/>
     Yield %: <input type="number" name="yieldPercent" step="any"/>% <br/>

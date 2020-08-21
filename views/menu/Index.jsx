@@ -15,10 +15,10 @@ class Index extends React.Component {
             {menu.map((menu, i)=>{
                 return (
                     <li>
-                        <a href={`/menu/${menu._id}`}><h2>{menu.dishName}</h2></a>
-                        Menu price: ${menu.menuPrice}
-                        Season: {menu.season}
-                        <a href={`/menu/${menu._id}/edit`}>Edit Inventory</a>
+                        <a href={`/menu/${menu._id}`}><h2>{menu.season}</h2></a>
+                        Menu price: ${menu.menuPrice}<br/> 
+                        Season: {menu.season}<br/>
+                        <a href={`/menu/${menu._id}/edit`}>Edit Menu</a>
                         <form action={`/menu/${menu._id}?_method=DELETE`} method="POST">
                                         <input type="submit" value="delete"/>
                         </form>

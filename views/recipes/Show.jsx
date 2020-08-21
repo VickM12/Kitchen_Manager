@@ -2,13 +2,14 @@ const React = require('react');
 class Show extends React.Component{
     render () {
             const recipe= this.props.recipe;
+            const ingredient= recipe.keys.ingredient.map(ingredient)
             console.log(recipe.ingredient)
             return(
                 <div>
                 <h1>show page</h1>
                 <a href="/recipes">Return</a>
                 <h2>{recipe.dishName}</h2>
-                <h3>{recipe.glutenFree? `gluten free` : ``}</h3>
+                <h3>{recipe.isGlutenFree? `gluten free` : ``}</h3>
                  <table>
                  <tr>
                      <th>Ingredient</th>

@@ -70,7 +70,7 @@ router.get('/:id', (req, res) => {
     Inventory.findById(req.params.id, (error, foundInventory) => {
         // render the Show route and pass it the foundFruit
         res.render('inventory/Show', {
-            fruit: foundInventory
+            inventory: foundInventory
         });
     });
 });

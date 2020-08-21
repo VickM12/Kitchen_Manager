@@ -45,6 +45,19 @@ router.post('/', (req, res) => {
     } else {
         req.body.isGlutenFree = false;
     }
+    // const menuItems= {
+    //     dishName: req.body.dishName,
+    //     section: req.body.section,
+    //     foodCost: req.body.foodCost,
+    //     menuPrice:req.body.menuPrice,
+    //     station: req.body.station,
+    //     isGlutenFree:req.body.isGlutenFree
+    // }
+    // const menu = {
+    //     season:req.body.season,
+    //     menuItems:[]
+    // }
+    // menu.menuItems.push(menuItems)
     // Use Model to create menu Document
     Menu.create(req.body, (error, createdMenu) => {
         // Once created - respond to client

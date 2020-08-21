@@ -2,13 +2,13 @@ const React= require('react');
 class Edit extends React.Component{
     render () {
         const {recipe}= this.props
-        const ingredient = this.props.recipe.ingredient
+        const ingredient = recipe.keys(ingredient.map(ingredient))
         return (
             
             <div>
 <h1>Edit Recipe</h1>
 <div>
-<form action={`/recipes/`} method="PUT">
+<form action={`/recipes`} method="PUT">
     Dish Name: <input type="text" name="dishName" defaultValue={recipe.dishName}/><br/>
     Ingredients:<br/>
     Name: <input type="text" name="name" defaultValue={recipe.ingredient.name}/><br/>
