@@ -50,6 +50,16 @@ router.put('/:id', (req, res) => {
         isGlutenFree: req.body.isGlutenFree
     }
     recipe.ingredient.push(ingredient)
+    const newIngredient ={
+        name: req.body.name,
+        amount: req.body.amount,
+        unit: req.body.unit,
+        yieldPercent: req.body.yieldPercent,
+        purchasePrice: req.body.purchasePrice,
+        foodCost: req.body.foodCost
+    }
+    console.log(newIngredient)
+    recipe.ingredient.push(newIngredient)
     // Update the recipes document using our model
     Recipes.findByIdAndUpdate(req.params.id, recipe, { new: true }, (err, updatedModel) => {
         console.log(err)
@@ -83,9 +93,12 @@ router.post('/', (req, res) => {
         isGlutenFree: req.body.isGlutenFree
     }
     recipe.ingredient.push(ingredient)
+    
+    
     // Use Model to create recipes Document
     Recipes.create(recipe, (error, createdRecipes) => {
         // Once created - respond to client
+
         console.log(error)
         console.log(createdRecipes)
         res.redirect('/recipes');
@@ -102,7 +115,13 @@ router.get('/:id/edit', (req, res) => {
         })
     });
 });
-
+router.get('/:id/newingredient', (req, res)=>{
+    Recipes.findById(req.params.id, (err, foundRecipe)=>{
+        res.render('recipes/NewIngredient',  {
+            recipe: foundRecipe
+        })
+    })
+});
 // Show
 router.get('/:id', (req, res) => {
     // Find the specific document

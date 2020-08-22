@@ -11,7 +11,8 @@ class Show extends React.Component{
             
                 <div>
                 <h1>show page</h1>
-                <a href="/recipes">Return</a>
+                <a href="/recipes">Return</a> 
+                <a href={`/recipes/${recipe._id}/newingredient`}>Add New Ingredient</a>
                 <h2>{recipe.dishName}</h2>
                 <h3>{recipe.isGlutenFree? `gluten free` : ``}</h3>
                  <table>

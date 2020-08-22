@@ -5,7 +5,7 @@ render (){
     const {menu} = this.props
     return (
         <div>
-            <form action='/menu' method='PUT'>
+            <form action={`/menu/${menu._id}/?_method=PUT`} method="POST">
             Dish Name <input type="text" name="dishName" defaultValue={menu.dishName}/><br/>
             Season: <input type="text" name="season" defaultValue={menu.season}/><br/>
             section: <input type="text" name="section" defaultValue={menu.section}/><br/>
