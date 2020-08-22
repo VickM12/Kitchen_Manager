@@ -1,20 +1,19 @@
 const React = require('react');
+const Recipecard = require('../components/Recipecard')
 class Show extends React.Component{
     render () {
             const {recipe}= this.props
             
             console.log(recipe.ingredient)
-            return(
-            
-            // const ingredient= recipe.keys.ingredient.map(ingredient)
-            
-            
+            return(            
+            <Recipecard>
                 <div>
-                <h1>show page</h1>
+                    <div className="header">
+                <h1>{recipe.dishName}</h1>
                 <a href="/recipes">Return</a> 
                 <a href={`/recipes/${recipe._id}/newingredient`}>Add New Ingredient</a>
-                <h2>{recipe.dishName}</h2>
-                <h3>{recipe.isGlutenFree? `gluten free` : ``}</h3>
+                </div>
+                <h2>{recipe.isGlutenFree? `gluten free` : ``}</h2>
                  <table>
                  <tr>
                      <th>Ingredient</th>
@@ -54,6 +53,7 @@ class Show extends React.Component{
                  <h3>Method of Prep</h3>
                  <article>{recipe.methodOfPrep}</article>
             </div>
+            </Recipecard>
         ) 
     } 
 }

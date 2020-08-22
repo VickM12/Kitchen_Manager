@@ -1,0 +1,37 @@
+body{
+    background-color:lightblue;
+    text-transform: capitalize;
+}
+
+a{
+    border: 1px solid black;
+    border-radius:2px;
+    margin:5px;
+    padding: 2px;
+    background-color: white;
+    text-decoration:none;
+}
+
+.header{
+    /* display:flex;
+    flex-direction:column; */
+    align-items:center;
+    width: 100%;
+    margin: 5px;
+    padding: 2px;
+    background:linear-gradient(rgb(0, 162, 255), lightblue);    
+}
+table, th, td{
+    border: 1px solid black;
+    border-radius: 2px;
+    border-collapse:collapse;
+    padding: 2px;
+    margin:3px;
+    text-align: center;
+    background-color:whitesmoke;
+    /* background-color: rgb(181, 189, 165); */
+    /* background-color: rgb(89, 216, 152) */
+    /* background-color: rgb(255, 246, 228); */
+    
+}
+

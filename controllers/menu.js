@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Menu = require('../models/menu.js');
-
+const Recipes = require('../models/recipes.js')
 // add routes
 // Index
 router.get('/', (req, res) => {
@@ -10,6 +10,15 @@ router.get('/', (req, res) => {
         ///FILE PATH
         res.render('menu/Index', {
             menu: allMenu
+            
+        })
+    });
+    Recipes.find({}, (error, allRecipes) => {
+        ///FILE PATH
+        // console.log(error)
+        // console.log(allRecipes)
+        res.render('menu/Index', {
+            recipes: allRecipes
         })
     });
 
@@ -17,7 +26,10 @@ router.get('/', (req, res) => {
 
 // New
 router.get('/new', (req, res) => {
-    res.render('menu/New');
+    Recipes.find({}, (error, allRecipes) =>{
+    res.render('menu/New',{
+    recipes: allRecipes});
+    });
 });
 
 // Delete
