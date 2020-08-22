@@ -34,6 +34,8 @@ router.put('/:id', (req, res) => {
     
     // Update the fruit document using our model
     Inventory.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel) => {
+        console.log(err)
+        console.log(updatedModel)
         res.redirect('/inventory');
     });
 });
@@ -59,7 +61,7 @@ router.get('/:id/edit', (req, res) => {
     Inventory.findById(req.params.id, (err, foundInventory) => {
         // render the edit view and pass it the found fruit
         res.render('inventory/Edit', {
-            inventroy: foundInventory
+            inventory: foundInventory
         })
     });
 });

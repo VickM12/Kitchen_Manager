@@ -32,10 +32,28 @@ router.delete('/:id', (req, res) => {
 
 // Put
 router.put('/:id', (req, res) => {
-    req.body.isGlutenFree = req.body.favorite === "on" ? true : false;
-    
+    req.body.isGlutenFree = req.body.isGlutenFree === "on" ? true : false;
+    const ingredient = {
+        name: req.body.name,
+        amount: req.body.amount,
+        unit: req.body.unit,
+        yieldPercent: req.body.yieldPercent,
+        purchasePrice: req.body.purchasePrice,
+        foodCost: req.body.foodCost
+    }
+    const recipe = {
+        dishName: req.body.dishName,
+        ingredient:[],
+        methodOfPrep: req.body.methodOfPrep,
+        totalCost: req.body.totalCost,
+        menuPrice: req.body.menuPrice,
+        isGlutenFree: req.body.isGlutenFree
+    }
+    recipe.ingredient.push(ingredient)
     // Update the recipes document using our model
-    Recipes.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel) => {
+    Recipes.findByIdAndUpdate(req.params.id, recipe, { new: true }, (err, updatedModel) => {
+        console.log(err)
+        console.log(updatedModel)
         res.redirect('/recipes');
     });
 });

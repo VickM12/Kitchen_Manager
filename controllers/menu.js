@@ -31,9 +31,22 @@ router.delete('/:id', (req, res) => {
 // Put
 router.put('/:id', (req, res) => {
     req.body.isGlutenFree = req.body.favorite === "on" ? true : false;
-    
+    const menuItem= {
+        dishName: req.body.dishName,
+        section: req.body.section,
+        foodCost: req.body.foodCost,
+        menuPrice:req.body.menuPrice,
+        station: req.body.station,
+        isGlutenFree:req.body.isGlutenFree
+    }
+    const menu = {
+        season:req.body.season,
+        menuItem:[],
+        isGlutenFree: req.body.isGlutenFree
+    }
+    menu.menuItem.push(menuItem)
     // Update the menu document using our model
-    Menu.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel) => {
+    Menu.findByIdAndUpdate(req.params.id, menu, { new: true }, (err, updatedModel) => {
         res.redirect('/menu');
     });
 });
@@ -75,6 +88,7 @@ router.post('/', (req, res) => {
 // Edit 
 router.get('/:id/edit', (req, res) => {
     // Find our document from the collection - using mongoose model
+
     Menu.findById(req.params.id, (err, foundMenu) => {
         // render the edit view and pass it the found menu
         res.render('menu/Edit', {

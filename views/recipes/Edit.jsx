@@ -8,23 +8,27 @@ class Edit extends React.Component{
             <div>
 <h1>Edit Recipe</h1>
 <div>
-<form action={`/recipes`} method="PUT">
+{recipe.ingredient.map((ingredient, i)=>{
+         return( 
+<form action={`/recipes/${recipe._id}/?_method=PUT`} method="POST">
     Dish Name: <input type="text" name="dishName" defaultValue={recipe.dishName}/><br/>
     Ingredients:<br/>
-    Name: <input type="text" name="name" defaultValue={recipe.ingredient.name}/><br/>
-    Amount: <input type="number"  name="amount" defultValue={recipe.ingredient.amount}/><br/>
-    Unit: <input type="text" name="unit" defaultValue={recipe.ingredient.unit}/><br/>
+    
+    Name: <input type="text" name="name" defaultValue={recipe.ingredient[i].name}/><br/>
+    Amount: <input type="number"  name="amount" defultValue={recipe.ingredient[i].amount}/><br/>
+    Unit: <input type="text" name="unit" defaultValue={recipe.ingredient[i].unit}/><br/>
     Yield %: <input type="number" name="yieldPercent" step="any" defaultValue={recipe.ingredient.yieldPercent}/>% <br/>
     Purchase Price: $<input type="number" name="purchasePrice" step="any" defaultValue={recipe.ingredient.purchasePrice}/> / oz.<br/>
-    Food Cost: $ <input type="number" name="foodCost" step="any" defaultValue={recipe.ingredient.foodCost}/><br/>
-     
+    Food Cost: $ <input type="number" name="foodCost" step="any" defaultValue={recipe.ingredient.foodCost}/>( (purchase price / Yield) x Amount)<br/>
+        
     Method of Prep:<input type="text area" name="methodOfPrep" defaultValue={recipe.methodOfPrep}/><br/>
     Total Cost: $<input type="number" name="totalCost" step="any" defaultValue={recipe.totalCost}/><br/>
-    Menu Price: $<input type="number" name="menuPrice" step="any" defaultValue={recipe.menuPrice}/><br/>
+    Menu Price: $<input type="number" name="menuPrice" step="any" defaultValue={recipe.menuPrice}/>(Total Cost /33%)<br/>
     Gluten Free<input type="checkbox" name="isGlutenFree" defaultValue={recipe.isGlutenFree}/><br/>
     <input type="submit" name="" defaultValue="Submit Changes"/><br/>
   
 </form>
+)})} 
 </div>
 </div>
         )
