@@ -1,12 +1,23 @@
 const React = require('react');
 // const addItem= require('../components/MenuItem.jsx')
 const Default= require('../components/Forms.jsx')
-// const Recipes= require('../models/recipes.js')
-// const recipe =this.props.Recipes
+const Recipes= require('../../models/recipes.js')
+//
+
 class New extends React.Component{
+    
 render (){
+     const {recipes} =this.props
+    //  console.log(recipe)
+    
     return (
+        
+            recipes.map((recipe, i)=>{
+                
+        return(
+            
         <Default>
+            
         <div>
             <div className='header'>
             <h1>Create New Menu</h1>
@@ -14,7 +25,11 @@ render (){
             </div>
             <form id="form" action='/menu' method='POST'>
             Season: <input type="text" name="season"/><br/>
-             Dish Name <input type="text" name="dishName"/><br/>
+            Dish Name <input name="dishName">
+                        <datalist id="recipes">
+                        <option value={recipes[i].dishName}></option>
+                        </datalist>
+                        </input><br/>
             section: <input type="text" name="section"/><br/>
             Food Cost: <input type="number" name="foodCost"/><br/>
             Menu Price: $<input type="number" name="menuPrice"/><br/>
@@ -28,6 +43,8 @@ render (){
         </div>
 
         </Default>
+        )})
+
         )
     }
 }

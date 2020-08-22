@@ -7,8 +7,8 @@ class NewIngredient extends React.Component{
             <h1>Add New Ingredient</h1>
             {recipe.ingredient.map((ingredient, i)=>{
          return( 
-            <form action={`/recipes/${recipe._id}?_method=PUT`} method="POST">
-            Dish Name: <input type="text" name="dishName" defaultValue={recipe.dishName}/><br/><br/>
+            <form action={`/recipes/${recipe._id}/?_method=PUT`} method="POST">
+            {/* Dish Name: <input type="text" name="dishName" defaultValue={recipe.dishName}/><br/><br/> */}
 
 {//New data to input
 }
@@ -22,7 +22,7 @@ class NewIngredient extends React.Component{
 
 {//Original Data to Keep
 }
-            Name: <input type="text" name="name" defaultValue={recipe.ingredient[i].name}/><br/>
+            {/* Name: <input type="text" name="name" defaultValue={recipe.ingredient[i].name}/><br/>
             Amount: <input type="number"  name="amount" defultValue={recipe.ingredient[i].amount}/><br/>
             Unit: <input type="text" name="unit" defaultValue={recipe.ingredient[i].unit}/><br/>
             Yield %: <input type="number" name="yieldPercent" step="any" defaultValue={recipe.ingredient.yieldPercent}/>% <br/>
@@ -31,7 +31,7 @@ class NewIngredient extends React.Component{
             Total Cost: $<input type="number" name="totalCost" step="any" defaultValue={recipe.totalCost}/><br/>
             Menu Price: $<input type="number" name="menuPrice" step="any" defaultValue={recipe.menuPrice}/>(Total Cost /33%)<br/>
             Method of Prep:<input type="text area" name="methodOfPrep" defaultValue={recipe.methodOfPrep}/><br/>
-            Gluten Free<input type="checkbox" name="isGlutenFree" defaultValue={recipe.isGlutenFree}/><br/>
+            Gluten Free<input type="checkbox" name="isGlutenFree" defaultValue={recipe.isGlutenFree}/><br/> */}
             <input type="submit" name="" defaultValue="Submit Changes"/><br/>
             </form>
             )})} 
