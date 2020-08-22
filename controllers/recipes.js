@@ -41,15 +41,6 @@ router.put('/:id', (req, res) => {
         purchasePrice: req.body.purchasePrice,
         foodCost: req.body.foodCost
     }
-    const recipe = {
-        dishName: req.body.dishName,
-        ingredient:[],
-        methodOfPrep: req.body.methodOfPrep,
-        totalCost: req.body.totalCost,
-        menuPrice: req.body.menuPrice,
-        isGlutenFree: req.body.isGlutenFree
-    }
-    recipe.ingredient.push(ingredient)
     const newIngredient ={
         name: req.body.name,
         amount: req.body.amount,
@@ -58,8 +49,19 @@ router.put('/:id', (req, res) => {
         purchasePrice: req.body.purchasePrice,
         foodCost: req.body.foodCost
     }
+    const recipe = {
+        dishName: req.body.dishName,
+        ingredient:[],
+        methodOfPrep: req.body.methodOfPrep,
+        totalCost: req.body.totalCost,
+        menuPrice: req.body.menuPrice,
+        isGlutenFree: req.body.isGlutenFree
+    }
     console.log(newIngredient)
-    recipe.ingredient.push(newIngredient)
+    recipe.ingredient.push(ingredient)
+    
+    
+    // recipe.ingredient.push(newIngredient)
     // Update the recipes document using our model
     Recipes.findByIdAndUpdate(req.params.id, recipe, { new: true }, (err, updatedModel) => {
         console.log(err)
