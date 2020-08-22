@@ -1,5 +1,5 @@
 const React = require('react');
-const Recipes = require('../models/recipes.js')
+// const Recipes = require('../models/recipes.js')
 const Default = require('../components/Default.jsx')
 class Index extends React.Component {
     render () {
