@@ -3,7 +3,8 @@ const React = require('react');
 const Default = require('../components/Default.jsx')
 class Index extends React.Component {
     render () {
-        const {menu}= this.props;
+        const menu= this.props.menu;
+        const {recipes} = this.props;
         return(
            <Default>
            <div className='header'>
