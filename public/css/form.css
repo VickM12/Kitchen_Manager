@@ -17,7 +17,7 @@ div{
     background:linear-gradient(rgb(0, 162, 255), lightblue);    
 }
 #form{
-margin: 2px;
+margin: 1px;
 padding: 2px;
 display:flex;
 flex-direction: column;
@@ -29,7 +29,7 @@ font-size: 20px
 }
 #newRecipeForm{
 
-display:flex;
+/* display:flex; */
 flex-direction: column;
 flex-wrap: wrap;
 align-Items: center;
@@ -37,6 +37,13 @@ background-color: lightblue;
 width: 100%;
 height: 100%;
 font-size: 20px
+}
+
+#mop{
+    word-wrap: normal;
+    resize: none;
+    border: none;
+
 }
 
 #submit{

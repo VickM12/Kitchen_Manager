@@ -25,14 +25,15 @@ class New extends React.Component{
             Yield %: <input type="number" name="yieldPercent" step="any"/>% <br/>
             Purchase Price: $<input type="number" name="purchasePrice" step="any"/> / oz.<br/>
             Food Cost: $ <input type="number" name="foodCost" step="any"/><br/>
-            Method of Prep:<input type="text area" name="methodOfPrep"/><br/>
+            
             Total Cost: $<input type="number" name="totalCost" step="any"/><br/>
              Menu Price: $<input type="number" name="menuPrice" step="any"/><br/>
             Gluten Free<input type="checkbox" name="isGlutenFree"/><br/>
+            Method of Prep:<br/><textarea label="Method of Prep" id="mop"  name="methodOfPrep" rows="5" cols="50"/><br/>
             <input id="submit" type="submit" name="" value="Submit New Recipe" /><br/>    
             </form>
         </div>
-        // </Default>
+     </Default>
 
         )
     }

@@ -12,9 +12,7 @@ render (){
     
     return (
         
-            recipes.map((recipe, i)=>{
-                
-        return(
+            
             
         <Default>
             
@@ -22,28 +20,32 @@ render (){
             <div className='header'>
             <h1>Create New Menu</h1>
             <a href="/menu">return</a>
-            </div>
-            <form id="form" action='/menu' method='POST'>
-            Season: <input type="text" name="season"/><br/>
-            Dish Name <input name="dishName">
-                        <datalist id="recipes">
-                        <option value={recipes[i].dishName}></option>
-                        </datalist>
-                        </input><br/>
+            </div> 
+        {recipes.map((recipe, i)=>{
+                
+        return(
+            <form id="form" action='/menu' method='POST' value="menu">
+          
+             Season: <input type="text" name="season"/><br/>
+            Dish Name <input name="dishName"
+                        datalist id="recipes"
+                        option value={recipes[i].dishName} />
+                        <br/>
             section: <input type="text" name="section"/><br/>
             Food Cost: <input type="number" name="foodCost"/><br/>
             Menu Price: $<input type="number" name="menuPrice"/><br/>
             station: <input type="text" name="station"/><br/>
             Is Gluten Free: <input type="checkbox" name="isGlutenFree" default={false}/><br/>
+            </form>
+        )})}
+            <form value="menu">
             <input id="submit" type="submit" name="" value="Submit Menu"/> 
-            </form>{
+            </form>
             
-            /*<button onclick={addItem()}id="addNewItem">Add New Item</button>
-            <div class="footer"></div> */}
         </div>
 
         </Default>
-        )})
+       
 
         )
     }

@@ -8,13 +8,13 @@ class NewIngredient extends React.Component{
             {recipe.ingredient.map((ingredient, i)=>{
          return( 
             <form action={`/recipes/${recipe._id}/?_method=PUT`} method="POST">
-            {/* Dish Name: <input type="text" name="dishName" defaultValue={recipe.dishName}/><br/><br/> */}
+            Dish Name: <input type="text" name="dishName" defaultValue={recipe.dishName}/><br/><br/>
 
 {//New data to input
 }
             New Ingredient:<br/>
             Name: <input type="text" name="name"/><br/>
-            Amount: <input type="number"  name="amount" /><br/>
+            Amount: <input type="number"  name="amount" step="any" /><br/>
             Unit: <input type="text" name="unit" d/><br/>
             Yield %: <input type="number" name="yieldPercent" step="any"/>% <br/>
             Purchase Price: $<input type="number" name="purchasePrice" step="any" /> / oz.<br/>

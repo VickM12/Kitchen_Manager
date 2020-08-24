@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Recipes = require('../models/recipes.js');
+const Ingredient = require('../models/ingredient.js');
 
 // add routes
 // Index
@@ -41,14 +42,7 @@ router.put('/:id', (req, res) => {
         purchasePrice: req.body.purchasePrice,
         foodCost: req.body.foodCost
     }
-    const newIngredient ={
-        name: req.body.name,
-        amount: req.body.amount,
-        unit: req.body.unit,
-        yieldPercent: req.body.yieldPercent,
-        purchasePrice: req.body.purchasePrice,
-        foodCost: req.body.foodCost
-    }
+  
     const recipe = {
         dishName: req.body.dishName,
         ingredient:[],
@@ -57,17 +51,57 @@ router.put('/:id', (req, res) => {
         menuPrice: req.body.menuPrice,
         isGlutenFree: req.body.isGlutenFree
     }
-    console.log(newIngredient)
+    // console.log(newIngredient)
+    console.log(ingredient)
     recipe.ingredient.push(ingredient)
-    
-    
-    // recipe.ingredient.push(newIngredient)
+
     // Update the recipes document using our model
+    Ingredient.create(ingredient, (error, createdIngredient)=>{
+        console.log (error)
+        console.log(createdIngredient)
+    });
+
     Recipes.findByIdAndUpdate(req.params.id, recipe, { new: true }, (err, updatedModel) => {
         console.log(err)
         console.log(updatedModel)
         res.redirect('/recipes');
     });
+});
+
+router.put('/:id/newingredient', (req, res)=>{
+    const ingredient = {
+        name: req.body.name,
+        amount: req.body.amount,
+        unit: req.body.unit,
+        yieldPercent: req.body.yieldPercent,
+        purchasePrice: req.body.purchasePrice,
+        foodCost: req.body.foodCost
+    }
+    const newIngredient ={
+      name: req.body.name,
+      amount: req.body.amount,
+      unit: req.body.unit,
+      yieldPercent: req.body.yieldPercent,
+      purchasePrice: req.body.purchasePrice,
+      foodCost: req.body.foodCost
+  }
+    //   const recipe={   
+    //       dishName: req.body.dishName,
+    //       ingredient:[ingredient],
+    //       methodOfPrep: req.body.methodOfPrep,
+    //       totalCost: req.body.totalCost,
+    //       menuPrice: req.body.menuPrice,
+    //       isGlutenFree: req.body.isGlutenFree
+    //   }
+  console.log(recipe)
+  recipe.ingredient.push(newIngredient)
+  // Update the recipes document using our model
+
+  Recipes.findByIdAndUpdate(req.params.id, recipe, { new: true }, (err, updatedModel) => {
+      console.log(err)
+      console.log(updatedModel)
+      res.redirect('/recipes');
+  });
 });
 
 // Create
@@ -77,27 +111,13 @@ router.post('/', (req, res) => {
     } else {
         req.body.isGlutenFree = false;
     }
-    // console.log(req.body)
-    const ingredient = {
-        name: req.body.name,
-        amount: req.body.amount,
-        unit: req.body.unit,
-        yieldPercent: req.body.yieldPercent,
-        purchasePrice: req.body.purchasePrice,
-        foodCost: req.body.foodCost
-    }
-    const recipe = {
-        dishName: req.body.dishName,
-        ingredient:[],
-        methodOfPrep: req.body.methodOfPrep,
-        totalCost: req.body.totalCost,
-        menuPrice: req.body.menuPrice,
-        isGlutenFree: req.body.isGlutenFree
-    }
-    recipe.ingredient.push(ingredient)
-    
+    // console.log(req.body)   
     
     // Use Model to create recipes Document
+    // Ingredient.create(ingredient, (error, createdIngredient)=>{
+    //     console.log (error)
+    //     console.log(createdIngredient)
+    // });
     Recipes.create(recipe, (error, createdRecipes) => {
         // Once created - respond to client
 
@@ -105,6 +125,7 @@ router.post('/', (req, res) => {
         console.log(createdRecipes)
         res.redirect('/recipes');
     });
+    
 });
 
 // Edit 
