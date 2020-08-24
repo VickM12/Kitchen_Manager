@@ -9,6 +9,9 @@ class Show extends React.Component {
             <div>
                 <a href="/menu">Return</a>
                 <h1>{menu.season}</h1>
+                <div class="nav">
+                    <a href={`/menu/${menu._id}/newdish`}>Add New Menu Item</a>
+                </div>
                 <ul>{ 
                 menu.menuItem.map((menuItem, i)=>{
                         return(               

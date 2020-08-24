@@ -14,14 +14,6 @@ router.get('/', (req, res) => {
             
         })
     });
-    Recipes.find({}, (error, allRecipes) => {
-        ///FILE PATH
-        // console.log(error)
-        // console.log(allRecipes)
-        res.render('menu/Index', {
-            recipes: allRecipes
-        })
-    });
 
 });
 
@@ -42,6 +34,33 @@ router.delete('/:id', (req, res) => {
 });
 
 // Put
+
+//Add New Menu Item///
+router.put("/:id/newMenuItem", (req, res) => {
+    req.body.isGlutenFree = req.body.favorite === "on" ? true : false;
+    console.log(
+      "=============================add add dish to menu put route============================"
+    );
+    Menu.findById(req.params.id, (err, menu) => {
+      console.log(err);
+      console.log(menu);
+  
+      menu.menuItem.push(req.body);
+      console.log("Pushed menu Item. All Menu Items:");
+      console.log(menu.menuItem);
+      console.log("===============");
+      menu.save((err, updatedMenu) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(updatedMenu);
+        }
+        res.redirect("/menu");
+      });
+    });
+  });
+
+//Regular Menu Edit Page//
 router.put('/:id', (req, res) => {
     req.body.isGlutenFree = req.body.favorite === "on" ? true : false;
     const menuItem= {
@@ -109,6 +128,13 @@ router.get('/:id/edit', (req, res) => {
         })
     });
 });
+router.get("/:id/newdish", (req, res) => {
+    Menu.findById(req.params.id, (err, foundMenu) => {
+      res.render("menu/NewMenuItem", {
+        menu: foundMenu,
+      });
+    });
+  });
 
 // Show
 router.get('/:id', (req, res) => {

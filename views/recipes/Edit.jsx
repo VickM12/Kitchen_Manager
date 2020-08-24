@@ -10,15 +10,15 @@ class Edit extends React.Component{
 <div>
 {recipe.ingredient.map((ingredient, i)=>{
          return( 
-<form action={`/recipes/${recipe._id}/newingredient/?_method=PUT`} method="POST">
+<form action={`/recipes/${recipe._id}/?_method=PUT`} method="POST">
     
     Dish Name: <input type="text" name="dishName" defaultValue={recipe.dishName}/><br/>
     Ingredients:<br/>
     
     Name: <input id='edit'type="text" name="name" defaultValue={recipe.ingredient[i].name}/><br/>
-    Amount: <input type="number"  name="amount" defultValue={recipe.ingredient[i].amount}/><br/>
+    Amount: <input type="number"  name="amount" defultValue={recipe.ingredient[i].amount} step="any"/><br/>
     Unit: <input type="text" name="unit" defaultValue={recipe.ingredient[i].unit}/><br/>
-    Yield %: <input type="number" name="yieldPercent" step="any" defaultValue={recipe.ingredient.yieldPercent}/>% <br/>
+    Yield %: <input type="number" name="yieldPercent" step="any" defaultValue={recipe.ingredient[i].yieldPercent}/>% <br/>
     Purchase Price: $<input type="number" name="purchasePrice" step="any" defaultValue={recipe.ingredient.purchasePrice}/> / oz.<br/>
     Food Cost: $ <input type="number" name="foodCost" step="any" defaultValue={recipe.ingredient.foodCost}/>( (purchase price / Yield) x Amount)<br/>
         

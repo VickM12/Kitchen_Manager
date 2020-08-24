@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Recipes = require("../models/recipes.js");
+const Recipe = require("../models/recipes.js");
 const Ingredient = require("../models/ingredient.js");
 const { update } = require("../models/recipes.js");
 
@@ -8,7 +8,7 @@ const { update } = require("../models/recipes.js");
 // Index
 router.get("/", (req, res) => {
   // Use recipes model to get all recipes
-  Recipes.find({}, (error, allRecipes) => {
+  Recipe.find({}, (error, allRecipes) => {
     ///FILE PATH
     // console.log(error)
     // console.log(allRecipes)
@@ -26,7 +26,7 @@ router.get("/new", (req, res) => {
 // Delete
 router.delete("/:id", (req, res) => {
   // Delete document from collection
-  Recipes.findByIdAndRemove(req.params.id, (err, recipes) => {
+  Recipe.findByIdAndRemove(req.params.id, (err, recipes) => {
     res.redirect("/recipes");
   });
 });
@@ -36,7 +36,7 @@ router.put("/:id/newingredient", (req, res) => {
   console.log(
     "=============================add ingredient to recipe put route============================"
   );
-  Recipes.findById(req.params.id, (err, recipe) => {
+  Recipe.findById(req.params.id, (err, recipe) => {
     console.log(err);
     console.log(recipe);
 
@@ -87,7 +87,7 @@ router.put("/:id", (req, res) => {
     console.log(createdIngredient);
   });
 
-  Recipes.findByIdAndUpdate(
+  Recipe.findByIdAndUpdate(
     req.params.id,
     recipe,
     { new: true },
@@ -113,7 +113,7 @@ router.post("/", (req, res) => {
   //     console.log (error)
   //     console.log(createdIngredient)
   // });
-  Recipes.create(recipe, (error, createdRecipes) => {
+  Recipe.create(recipe, (error, createdRecipes) => {
     // Once created - respond to client
 
     console.log(error);
@@ -125,7 +125,7 @@ router.post("/", (req, res) => {
 // Edit
 router.get("/:id/edit", (req, res) => {
   // Find our document from the collection - using mongoose model
-  Recipes.findById(req.params.id, (err, foundRecipe) => {
+  Recipe.findById(req.params.id, (err, foundRecipe) => {
     // render the edit view and pass it the found recipes
     res.render("recipes/Edit", {
       recipe: foundRecipe,
@@ -133,7 +133,7 @@ router.get("/:id/edit", (req, res) => {
   });
 });
 router.get("/:id/newingredient", (req, res) => {
-  Recipes.findById(req.params.id, (err, foundRecipe) => {
+  Recipe.findById(req.params.id, (err, foundRecipe) => {
     res.render("recipes/NewIngredient", {
       recipe: foundRecipe,
     });
@@ -142,7 +142,7 @@ router.get("/:id/newingredient", (req, res) => {
 // Show
 router.get("/:id", (req, res) => {
   // Find the specific document
-  Recipes.findById(req.params.id, (error, foundRecipe) => {
+  Recipe.findById(req.params.id, (error, foundRecipe) => {
     // render the Show route and pass it the foundrecipes
     // console.log(error)
     // console.log(foundRecipe)

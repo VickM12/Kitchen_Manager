@@ -3,10 +3,12 @@ const Recipecard = require('../components/Recipecard')
 class Show extends React.Component{
     render () {
             const {recipe}= this.props
+            let i;
+            
             
             console.log(recipe.ingredient)
             return(            
-            <Recipecard>
+            <Recipecard>                
                 <div>
                     <div className="header">
                 <h1>{recipe.dishName}</h1>
@@ -28,6 +30,7 @@ class Show extends React.Component{
                 {
                     recipe.ingredient.map((ingredient, i)=>{
                         return(
+                         
                 <tr>
                     <td>{recipe.ingredient[i].name}</td>
                     <td>{recipe.ingredient[i].amount}</td>
