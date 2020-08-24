@@ -20,7 +20,7 @@ class Index extends React.Component {
                     <li>
                         <a href={`/inventory/${inventory._id}`}><h2>{inventory.name}</h2></a>
                         Purchase price: ${inventory.packPrice}<br/>
-                        Amount on Hand: {inventory.amntOnHand}<br/>
+                        Amount on Hand: {inventory.amntOnHand} {inventory.packType}(s)<br/>
                         <a href={`/inventory/${inventory._id}/edit`}>Edit Inventory</a>
                         <form action={`/inventory/${inventory._id}?_method=DELETE`} method="POST">
                                         <input type="submit" value="delete"/>

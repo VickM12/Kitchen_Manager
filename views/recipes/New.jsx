@@ -1,7 +1,7 @@
 const React= require('react');
 // const Recipe= require('../models/recipes.js')
 // import Inventory from '../controllers/inventory.js'
-const Default= require('../components/Forms.jsx')
+const Forms= require('../components/Forms.jsx')
 class New extends React.Component{
     render () {
         const ingredientPush = ()=>{
@@ -9,7 +9,7 @@ class New extends React.Component{
             console.log('Ive been called')
         }
         return (
-       <Default>
+       <Forms>
         <div>
                  <div class="header">
                      <h1>New Recipe</h1>
@@ -33,7 +33,7 @@ class New extends React.Component{
             <input id="submit" type="submit" name="" value="Submit New Recipe" /><br/>    
             </form>
         </div>
-     </Default>
+     </Forms>
 
         )
     }

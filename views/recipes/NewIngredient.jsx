@@ -1,18 +1,23 @@
 const React = require("react");
+const Forms= require('../components/Forms.jsx')
 class NewIngredient extends React.Component {
   render() {
     const { recipe } = this.props;
     return (
+        <Forms>
       <div>
+        <div class="header">
         <h1>Add New Ingredient</h1>
-
-        <form
+        <div class="nav">
+            <a href={`/recipes/${recipe._id}`}>Return</a>
+        </div>
+        </div>
+        <form id="form"
           action={`/recipes/${recipe._id}/newingredient?_method=PUT`}
           method="POST"
         >
           Dish Name:{" "}
           <input type="text" name="dishName" defaultValue={recipe.dishName} />
-          <br />
           <br />
           {
             //New data to input
@@ -39,6 +44,7 @@ class NewIngredient extends React.Component {
           <br />
         </form>
       </div>
+      </Forms>
     );
   }
 }

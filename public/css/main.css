@@ -6,13 +6,19 @@ body{
     
 }
 ul{
-    display:flex;
-    flex-direction: column;
+    /* display:flex;
+    flex-direction: column; */
     align-items:center;
     justify-content:left;
     background-color: lightblue;
     text-decoration: none;
     list-style-type: none;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+li{
+    padding:2px;
+    margin: 2px;
 }
 .header{
     display:flex;
@@ -23,6 +29,14 @@ ul{
     color:white;
     padding: 2px;
     background:linear-gradient(rgb(0, 162, 255), lightblue);    
+}
+a{
+    border: 1px solid black;
+    border-radius:2px;
+    margin:5px;
+    padding: 2px;
+    background-color: whitesmoke;
+    text-decoration:none;
 }
 .header a{
     margin: 2px;

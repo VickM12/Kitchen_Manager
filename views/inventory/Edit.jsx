@@ -1,11 +1,16 @@
 const React = require('react');
+const Forms= require('../components/Forms.jsx')
 class Edit extends React.Component{
     render(){
         const { inventory } = this.props;
         return (
+            <Forms>
             <div>
-                <h1>New Inventroy</h1>
-            <form action={`/inventory/${inventory._id}/?_method=PUT`} method="POST">
+                <div class="header">
+                <h1>Edit Inventory</h1>
+                <a href='/inventory'>Return</a>
+                </div>
+            <form id="form" action={`/inventory/${inventory._id}/?_method=PUT`} method="POST">
             Name: <input type="text" name="name" defaultValue={inventory.name}/><br/>
             Pack Type: <input type="text" name="packType" defaultValue={inventory.packType}/><br/>
             Pack Size:<input type="number" name="packSize" defaultValue={inventory.packSize}/><br/>
@@ -18,6 +23,7 @@ class Edit extends React.Component{
         
         </form>
         </div>
+        </Forms>
         )}
 }
 module.exports= Edit
