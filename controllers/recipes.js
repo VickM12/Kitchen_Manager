@@ -32,6 +32,21 @@ router.delete('/:id', (req, res) => {
 });
 
 // Put
+
+///New Ingredient Put Route/////
+router.put('/:id/newingredient', (req, res)=>{
+
+  Recipes.findById(req.params.id,  (err, recipe) => {
+      console.log(err)
+      console.log(recipe)
+      recipe.ingredient.push(req.body)
+      recipe.save((err, updatedRecipe)=>{
+      res.redirect('/recipes');
+      });
+  });
+});
+
+///Regular Edit Route///
 router.put('/:id', (req, res) => {
     req.body.isGlutenFree = req.body.isGlutenFree === "on" ? true : false;
     const ingredient = {
@@ -68,41 +83,6 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.put('/:id/newingredient', (req, res)=>{
-    const ingredient = {
-        name: req.body.name,
-        amount: req.body.amount,
-        unit: req.body.unit,
-        yieldPercent: req.body.yieldPercent,
-        purchasePrice: req.body.purchasePrice,
-        foodCost: req.body.foodCost
-    }
-    const newIngredient ={
-      name: req.body.name,
-      amount: req.body.amount,
-      unit: req.body.unit,
-      yieldPercent: req.body.yieldPercent,
-      purchasePrice: req.body.purchasePrice,
-      foodCost: req.body.foodCost
-  }
-    //   const recipe={   
-    //       dishName: req.body.dishName,
-    //       ingredient:[ingredient],
-    //       methodOfPrep: req.body.methodOfPrep,
-    //       totalCost: req.body.totalCost,
-    //       menuPrice: req.body.menuPrice,
-    //       isGlutenFree: req.body.isGlutenFree
-    //   }
-  console.log(recipe)
-  recipe.ingredient.push(newIngredient)
-  // Update the recipes document using our model
-
-  Recipes.findByIdAndUpdate(req.params.id, recipe, { new: true }, (err, updatedModel) => {
-      console.log(err)
-      console.log(updatedModel)
-      res.redirect('/recipes');
-  });
-});
 
 // Create
 router.post('/', (req, res) => {
