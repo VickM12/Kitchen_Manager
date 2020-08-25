@@ -141,7 +141,12 @@ router.get('/:id/edit', (req, res) => {
         })
     });
 });
+
 router.get("/:id/newdish", (req, res) => {    
+    // Recipes.find({}, (error, allRecipes) =>{
+    //     res.render('menu/NewMenuItem',{
+    //     recipes: allRecipes});
+    //     });
     Menu.findById(req.params.id, (err, foundMenu) => {
       res.render("menu/NewMenuItem", {
         menu: foundMenu
