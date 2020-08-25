@@ -23,7 +23,7 @@ render (){
             <a href="/menu">return</a>
             </div> 
             
-           <form action={`/menu/choosedish`} method="POST">
+           <form class='form' action={`/menu/choosedish`} method="POST">
             Dish Name < input list="recipes" name="dishName"/>
                 <datalist id="recipes">
 

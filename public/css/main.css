@@ -48,3 +48,31 @@ a:hover{
     border-radius: 5px;
     color:black;
 }
+
+@media (max-width:600px){
+.header{
+    width: 100%;
+    margin: 5px;
+    color:white;
+    font-size: 40px;
+    background:linear-gradient(rgb(0, 162, 255), lightblue);    
+}
+ul{
+    display:flex;
+   flex-direction: row; 
+   align-items:center;
+   justify-content:space-around;
+   background-color: lightblue;
+   text-decoration: none;
+   list-style-type: none;
+   font-size: 40px;
+   text-transform: capitalize;
+}
+li{
+   padding:2px;
+   margin: 2px;
+}
+#deleteBtn{
+    font-size:40px;
+}
+} 

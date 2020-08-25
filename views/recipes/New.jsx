@@ -16,7 +16,7 @@ class New extends React.Component{
                      <a href="/recipes">Return</a>
                  </div>
     
-            <form id="newRecipeForm" action="/recipes" method="POST">
+            <form class="form" id="newRecipeForm" action="/recipes" method="POST">
             Dish Name: <input type="text" name="dishName"/><br/>
             Ingredients:<br/>
             Name: <input type='text' name="name"/><br/>

@@ -14,7 +14,7 @@ class NewMenuItem extends React.Component {
         </div>
         {/* {recipes.map((recipe, i)=>{
                 return( */}
-        <form id="form" action={`/menu/${menu._id}/newMenuItem/?_method=PUT`} method="POST">
+        <form class="form" action={`/menu/${menu._id}/newMenuItem/?_method=PUT`} method="POST">
              Dish Name <input name="dishName"
                         datalist id="recipes"
                         option value={menu.dishName} />

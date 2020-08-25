@@ -12,8 +12,7 @@ class NewIngredient extends React.Component {
             <a href={`/recipes/${recipe._id}`}>Return</a>
         </div>
         </div>
-        <form id="form"
-          action={`/recipes/${recipe._id}/newingredient?_method=PUT`}
+        <form class="form" action={`/recipes/${recipe._id}/newingredient?_method=PUT`}
           method="POST"
         >
           Dish Name:{" "}

@@ -10,7 +10,7 @@ class Edit extends React.Component{
                 <h1>Edit Inventory</h1>
                 <a href='/inventory'>Return</a>
                 </div>
-            <form id="form" action={`/inventory/${inventory._id}/?_method=PUT`} method="POST">
+            <form class="form" action={`/inventory/${inventory._id}/?_method=PUT`} method="POST">
             Name: <input type="text" name="name" defaultValue={inventory.name}/><br/>
             Pack Type: <input type="text" name="packType" defaultValue={inventory.packType}/><br/>
             Pack Size:<input type="number" name="packSize" defaultValue={inventory.packSize}/><br/>

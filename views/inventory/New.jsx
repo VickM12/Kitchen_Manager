@@ -9,7 +9,7 @@ class New extends React.Component{
                 <h1>New Inventroy</h1>
                 <a id="return" href='/inventory'>Return</a>
                 </div>
-            <form id="form" action="/inventory" method="POST">
+            <form class="form" action="/inventory" method="POST">
             Name: <input type="text" name="name"/><br/>
             Pack Type: <input type="text" name="packType"/><br/>
             Pack Size:<input type="number" name="packSize"/><br/>

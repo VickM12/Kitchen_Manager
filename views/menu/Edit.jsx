@@ -17,7 +17,7 @@ render (){
             <div class="nav">
                 <a href='/menu'>return</a>
             </div>
-            <form id="edit" action={`/menu/${menu._id}/?_method=PUT`} method="POST">
+            <form class="form" id="edit" action={`/menu/${menu._id}/?_method=PUT`} method="POST">
             Dish Name <input type="text" defaultValue={menu.menuItem[i].dishName} name="dishName"
                          /><br/>
             Season: <input type="text" name="season" defaultValue={menu.season}/><br/>

@@ -15,7 +15,7 @@ class Edit extends React.Component{
         <div>
         {recipe.ingredient.map((ingredient, i)=>{
          return( 
-        <form id="form" action={`/recipes/${recipe._id}/?_method=PUT`} method="POST">
+        <form class="form" action={`/recipes/${recipe._id}/?_method=PUT`} method="POST">
     
         Dish Name: <input type="text" name="dishName" defaultValue={recipe.dishName}/><br/>
         Ingredients:<br/>
