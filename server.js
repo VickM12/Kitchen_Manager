@@ -27,6 +27,8 @@ mongoose.connection.once('open', () => {
     console.log("connected to mongo");
 })
 
+
+
 // Controller
 const inventoryController = require('./controllers/inventory.js');
 app.use('/inventory', inventoryController);
@@ -37,6 +39,9 @@ app.use('/menu', menuController);
 const recipesController = require('./controllers/recipes.js');
 app.use('/recipes', recipesController);
 
+app.get('/', (req, res)=>{
+    res.render('Index.jsx')
+})
 
 // listen
 app.listen(PORT, () => {

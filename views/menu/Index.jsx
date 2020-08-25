@@ -10,6 +10,7 @@ class Index extends React.Component {
            <div className='header'>
                 <h1>Menu Manager</h1>
                 <nav>
+                    <a href="/">Home</a>
                     <a href="/menu/new">Add New Menu</a>
                     <a href='/inventory'>Inventory Manager</a>
                     <a href='/recipes'>Recipe Manager</a>
@@ -20,8 +21,6 @@ class Index extends React.Component {
                 return (
                     <li key={menu.season}>
                         <a href={`/menu/${menu._id}`}><h2>{menu.season}</h2></a>
-                        Menu price: ${menu.menuPrice}<br/> 
-                        Season: {menu.season}<br/>
                         <a href={`/menu/${menu._id}/edit`}>Edit Menu</a>
                         <form action={`/menu/${menu._id}?_method=DELETE`} method="POST">
                                         <input type="submit" value="delete"/>

@@ -13,7 +13,7 @@ class Show extends React.Component {
                     <div class="nav">
                     <a href="/menu">Return</a>
                     <a href={`/menu/${menu._id}/newdish`}>Add New Menu Item</a>
-                    <a href="/recipes">Recipe</a>
+                    
                     </div>
                 </div>
                 <ul>{ 
@@ -25,7 +25,8 @@ class Show extends React.Component {
                         Station: {menu.menuItem[i].station}<br/>
                         Food Cost: ${menu.menuItem[i].foodCost}<br/>
                         Menu Price: ${menu.menuItem[i].menuPrice}<br/>
-                        {menu.menuItem[i].isGlutenFree? "Gluten Free" :''}
+                        {menu.menuItem[i].isGlutenFree? "Gluten Free" :''}<br/>
+                        <a href={`/recipes/${menu.menuItem[i].id}`}>Recipe</a>
                         
 
                     </li>

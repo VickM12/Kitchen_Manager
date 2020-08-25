@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Menu = require('../models/menu.js');
-const Recipes = require('../models/recipes.js')
+const Recipes = require('../models/recipes.js');
+const Recipe = require('../models/recipes.js');
 // add routes
 
 // Index
@@ -69,6 +70,7 @@ router.put('/:id', (req, res) => {
         foodCost: req.body.foodCost,
         menuPrice:req.body.menuPrice,
         station: req.body.station,
+        id: req.body.id,
         isGlutenFree:req.body.isGlutenFree
     }
     const menu = {
@@ -96,6 +98,7 @@ router.post('/', (req, res) => {
         foodCost: req.body.foodCost,
         menuPrice:req.body.menuPrice,
         station: req.body.station,
+        id: req.body.id,
         isGlutenFree:req.body.isGlutenFree
     }
     const menu = {
@@ -128,13 +131,17 @@ router.get('/:id/edit', (req, res) => {
         })
     });
 });
-router.get("/:id/newdish", (req, res) => {
+router.get("/:id/newdish", (req, res) => {    
     Menu.findById(req.params.id, (err, foundMenu) => {
       res.render("menu/NewMenuItem", {
-        menu: foundMenu,
-      });
+        menu: foundMenu
+        });
     });
   });
+        
+ 
+
+   
 
 // Show
 router.get('/:id', (req, res) => {

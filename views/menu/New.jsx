@@ -11,8 +11,6 @@ render (){
     //  console.log(recipe)
     
     return (
-        
-            
             
         <Default>
             
@@ -32,13 +30,14 @@ render (){
                         option value={recipes[i].dishName} />
                         <br/>
             section: <input type="text" name="section"/><br/>
-            Food Cost: <input type="number" name="foodCost" step="any"/><br/>
-            Menu Price: $<input type="number" name="menuPrice"/><br/>
+            Food Cost: <input type="number" defaultValue={recipes[i].foodCost}name="foodCost" step="any"/><br/>
+            Menu Price: $<input type="number" defaultValue={recipes[i].menuPrice} name="menuPrice"/><br/>
             station: <input type="text" name="station"/><br/>
             Is Gluten Free: <input type="checkbox" name="isGlutenFree" default={false}/><br/>
+            Recipe Id: <input type="Text" defaultValue={recipes[i]._id} name="id"/>
             <input id="submit" type="submit" name="" value="Submit Menu"/> 
             </form>
-        )})} 
+         )})}  
                         
         </div>
 

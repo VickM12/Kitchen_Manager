@@ -8,6 +8,7 @@ const menuItemSchema= new Schema (
     foodCost:{type: Number, required: true},
     menuPrice: {type:Number, required: true},
     station: {type: String, required: false},
+    id: {type: String, required:false}, 
     isGlutenFree: {type: Boolean, required: false, default:false}
     }
     );

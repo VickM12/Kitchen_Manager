@@ -1,13 +1,16 @@
 const React = require('react');
-
+const Default = require('../components/Default.jsx')
 class Show extends React.Component {
     render() {
         
         const inventory  = this.props.inventory;
         return (
+        <Default>
             <div>
-                <h1>Product</h1>
-                <a href="/inventory">Return</a><br/>
+                <div class="header">
+                <h1>{inventory.name}</h1>
+                <a href="/inventory">Return</a>
+                </div>
             Name: {this.props.inventory.name}<br/>
             Pack Type: {inventory.packType}<br/>
             Pack Size: {inventory.packSize}{inventory.packUnit}<br/>
@@ -16,6 +19,7 @@ class Show extends React.Component {
             Total Cost: ${inventory.totalCost}<br/>
             {inventory.favorite ? `Favorite, keep on hand` : `Don't keep on hand`}
             </div>
+        </Default>
         )
     }
 }

@@ -9,6 +9,7 @@ class Index extends React.Component {
                 <div className="header">
                 <h1>Inventory Manager</h1>
                 <nav>
+                    <a href="/">Home</a>
                     <a href="/inventory/new">Add New Item</a>
                     <a href='/menu'>Menu Manager</a>
                     <a href='/recipes'>Recipe Manager</a>

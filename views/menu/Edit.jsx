@@ -1,5 +1,5 @@
 const React = require('react');
-
+const Form= require('../components/Forms.jsx')
 class Edit extends React.Component{
 render (){
     const {menu} = this.props
@@ -7,6 +7,7 @@ render (){
          
             menu.menuItem.map((menuItem, i)=>{
             return(
+    <Form>
         <div>
         <div>
             <div class="nav">
@@ -19,12 +20,14 @@ render (){
             Food Cost: <input type="number" name="foodCost" defaultValue={menu.menuItem[i].foodCost}/><br/>
             Menu Price: $<input type="number" name="menuPrice" defaultValue={menu.menuItem[i].menuPrice}/><br/>
             Station: <input type="text" name="station" defaultValue={menu.menuItem[i].station}/><br/>
+            Recipe ID:<input type="text" name="id" defaultValue={menu.menuItem[i].id}/> <br/>
             Is Gluten Free: <input type="checkbox" name="isGlutenFree" defaultValue={menu.menuItem[i].isGlutenFree}/><br/>
             <input type="submit" name="" value="Submit Menu"/>
             </form>
             </div>
             
         </div>
+    </Form>
             )})
         )
     }
