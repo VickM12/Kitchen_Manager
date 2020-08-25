@@ -26,6 +26,16 @@ router.get('/new', (req, res) => {
     });
 });
 
+router.post('/choosedish', (req, res)=>{
+    Recipes.findOne({'dishName': req.body.dishName}, (error, foundRecipe) =>{
+       console.log(foundRecipe)
+    res.render('menu/ChooseDish',{
+        recipe:foundRecipe}
+
+        );
+    })
+});
+
 // Delete
 router.delete('/:id', (req, res) => {
     // Delete document from collection
@@ -112,7 +122,7 @@ router.post('/', (req, res) => {
     // Use Model to create menu Document
     Menu.create(menu, (error, createdMenu) => {
         // Once created - respond to client
-        res.redirect('/menu');
+        res.redirect('/menu/new');
         console.log(error)
     
         console.log(createdMenu)

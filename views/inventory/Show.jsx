@@ -11,13 +11,17 @@ class Show extends React.Component {
                 <h1>{inventory.name}</h1>
                 <a href="/inventory">Return</a>
                 </div>
-            Name: {this.props.inventory.name}<br/>
-            Pack Type: {inventory.packType}<br/>
-            Pack Size: {inventory.packSize}{inventory.packUnit}<br/>
-            Pack Price: ${inventory.packPrice}<br/>
-            Amount on Hand: {inventory.amntOnHand} pack(s)<br/>
-            Total Cost: ${inventory.totalCost}<br/>
-            {inventory.favorite ? `Favorite, keep on hand` : `Don't keep on hand`}
+                <ul>
+                    <li>
+                    Name: {this.props.inventory.name}<br/>
+                    Pack Type: {inventory.packType}<br/>
+                    Pack Size: {inventory.packSize}{inventory.packUnit}<br/>
+                    Pack Price: ${inventory.packPrice}<br/>
+                    Amount on Hand: {inventory.amntOnHand} pack(s)<br/>
+                    Total Cost: ${inventory.totalCost}<br/>
+                    {inventory.favorite ? `Favorite, keep on hand` : `Don't keep on hand`}
+                    </li>
+            </ul>
             </div>
         </Default>
         )

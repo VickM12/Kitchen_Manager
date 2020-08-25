@@ -72,3 +72,19 @@ a{
     background-color: whitesmoke;
     text-decoration:none;
 }
+.form{
+    width: 100%;
+    margin: 1px;
+    padding: 2px;
+    /* display:flex;
+    flex-direction: column; */  
+    align-Items: center;
+    background-color: lightblue;
+    width: 100%;
+    height: 100%;
+    font-size: 20px
+}
+
+.invisible{
+    display:none;
+}

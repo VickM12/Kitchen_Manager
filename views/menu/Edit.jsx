@@ -3,10 +3,14 @@ const Form= require('../components/Forms.jsx')
 class Edit extends React.Component{
 render (){
     const {menu} = this.props
+    let i;
+  for (i of menu.menuItem){
+          for (i = 0; i<=menu.menuItem.length; i++){         
     return (
          
-            menu.menuItem.map((menuItem, i)=>{
-            return(
+            // menu.menuItem.map((menuItem, i)=>{
+            // return(
+                
     <Form>
         <div>
         <div>
@@ -14,7 +18,8 @@ render (){
                 <a href='/menu'>return</a>
             </div>
             <form id="edit" action={`/menu/${menu._id}/?_method=PUT`} method="POST">
-            Dish Name <input type="text" name="dishName" defaultValue={menu.menuItem[i].dishName}/><br/>
+            Dish Name <input type="text" defaultValue={menu.menuItem[i].dishName} name="dishName"
+                         /><br/>
             Season: <input type="text" name="season" defaultValue={menu.season}/><br/>
             Section: <input type="text" name="section" defaultValue={menu.menuItem[i].section}/><br/>
             Food Cost: <input type="number" name="foodCost" defaultValue={menu.menuItem[i].foodCost}/><br/>
@@ -28,8 +33,10 @@ render (){
             
         </div>
     </Form>
-            )})
-        )
+                 
+            // )})
+        ) 
+    }}
     }
 }
 module.exports = Edit

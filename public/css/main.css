@@ -6,10 +6,10 @@ body{
     
 }
 ul{
-    /* display:flex;
-    flex-direction: column; */
+     display:flex;
+    flex-direction: row; 
     align-items:center;
-    justify-content:left;
+    justify-content:space-around;
     background-color: lightblue;
     text-decoration: none;
     list-style-type: none;

@@ -1,11 +1,17 @@
 const React = require("react");
+const Form= require('../components/Forms.jsx')
 class NewMenuItem extends React.Component {
   render() {
     const { menu} = this.props;
     const {recipes} = this.props;
     return (
+      <Form>
       <div>
+        <div class='header'>
         <h1>Add New Dish</h1>
+        <a href={`/menu/${menu._id}`}>Return to Menu</a>
+        <a href={`/menu`}>Return to Menu Manager</a>
+        </div>
         {/* {recipes.map((recipe, i)=>{
                 return( */}
         <form id="form" action={`/menu/${menu._id}/newMenuItem/?_method=PUT`} method="POST">
@@ -24,6 +30,7 @@ class NewMenuItem extends React.Component {
          {/* )})}   */}
                         
         </div>
+        </Form>
     );
   }
 }
