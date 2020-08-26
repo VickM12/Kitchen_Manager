@@ -148,7 +148,9 @@ router.get("/:id/newdish", (req, res) => {
     //     recipes: allRecipes});
     //     });
     Menu.findById(req.params.id, (err, foundMenu) => {
-      res.render("menu/NewMenuItem", {
+      console.log(err)
+      console.log(foundMenu)
+        res.render("menu/NewMenuItem", {
         menu: foundMenu
         });
     });
