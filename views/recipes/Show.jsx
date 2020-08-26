@@ -12,6 +12,7 @@ class Show extends React.Component{
                 <div>
                     <div className="header">
                 <h1>{recipe.dishName}</h1>
+                
                 <a href="/recipes">Return</a> 
                 <a href={`/recipes/${recipe._id}/newingredient`}>Add New Ingredient</a>
                 </div>
@@ -54,7 +55,10 @@ class Show extends React.Component{
                     </tr>                
                  </table>
                  <h3>Method of Prep</h3>
-                 <article>{recipe.methodOfPrep}</article>
+                 <article>
+                     <p>{recipe.methodOfPrep} </p>
+                     {/* <p>Recipe ID:{recipe._id}</p> */}
+                     </article>
             </div>
             </Recipecard>
         ) 

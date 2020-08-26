@@ -19,7 +19,7 @@ class Index extends React.Component{
             <div class="inspiration">
                 <article>
                 <h2>Quote of The Day</h2>
-                <p>Remember to breathe. Murder isn't legal</p>
+                <p>Remember to breathe.</p>
                 <img src='../../Media/iceberg.jpg'/>
                 </article>
             </div>
