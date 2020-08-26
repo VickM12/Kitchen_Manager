@@ -107,12 +107,29 @@ router.post("/", (req, res) => {
     req.body.isGlutenFree = false;
   }
   // console.log(req.body)
-
+  const ingredient = {
+    name: req.body.name,
+    amount: req.body.amount,
+    unit: req.body.unit,
+    yieldPercent: req.body.yieldPercent,
+    purchasePrice: req.body.purchasePrice,
+    foodCost: req.body.foodCost,
+  };
+  const recipe = {
+    dishName: req.body.dishName,
+    ingredient: [],
+    methodOfPrep: req.body.methodOfPrep,
+    totalCost: req.body.totalCost,
+    menuPrice: req.body.menuPrice,
+    isGlutenFree: req.body.isGlutenFree,
+  };
+  recipe.ingredient.push(ingredient);
   // Use Model to create recipes Document
-  // Ingredient.create(ingredient, (error, createdIngredient)=>{
-  //     console.log (error)
-  //     console.log(createdIngredient)
-  // });
+  Ingredient.create(ingredient, (error, createdIngredient)=>{
+      console.log (error)
+      console.log(createdIngredient)
+      console.log(ingredient)
+  });
   Recipe.create(recipe, (error, createdRecipes) => {
     // Once created - respond to client
 
