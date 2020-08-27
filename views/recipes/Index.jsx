@@ -18,12 +18,12 @@ class Index extends React.Component {
                 {recipes.map((recipe, i)=>{
                     return(
                     <li key={recipe.dishName}><a href={`recipes/${recipe._id}`}><h2>{recipe.dishName}</h2></a>
-                   <a href={`recipes/${recipe._id}/edit/`}>Edit this Recipe</a>
+                   {/* <a href={`recipes/${recipe._id}/edit/`}>Edit this Recipe</a> */}
                     {// Delete method
                     }
-                    <form action={`/recipes/${recipe._id}?_method=DELETE`} method="POST">
+                    {/* <form action={`/recipes/${recipe._id}?_method=DELETE`} method="POST">
                     <input type="submit" value="delete"/>
-                    </form>
+                    </form> */}
                     </li>
 
                     )

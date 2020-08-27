@@ -21,10 +21,10 @@ class Index extends React.Component {
                 return (
                     <li key={menu.season}>
                         <a href={`/menu/${menu._id}`}><h2>{menu.season}</h2></a>
-                        <a href={`/menu/${menu._id}/edit`}>Edit Menu</a>
+                        {/* <a href={`/menu/${menu._id}/edit`}>Edit Menu</a>
                         <form id="deleteBtn"action={`/menu/${menu._id}?_method=DELETE`} method="POST">
                                         <input type="submit" value="delete"/>
-                        </form>
+                        </form> */}
 
                     </li>
                 )
